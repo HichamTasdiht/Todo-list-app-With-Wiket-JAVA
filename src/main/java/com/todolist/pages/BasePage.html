@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Wicket To-Do List</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .navbar { margin-bottom: 2rem; }
+        .addTaskContainer{
+            min-height: 62vh !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .feedbackPanel:empty {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" wicket:id="homePage">TaskMaster</a>
+            <div class="d-flex">
+                <span class="navbar-text me-3 text-white">
+                    Hello, <span wicket:id="username">User</span>
+                </span>
+                <a wicket:id="logout" class="btn btn-outline-light btn-sm">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container flex-grow-1">
+        <wicket:child />
+    </main>
+
+    <footer class="mt-auto py-3 bg-light border-top">
+        <div class="container text-center">
+            <span class="text-muted">© 2026 To-Do App</span>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/main-ver-1768681193995.js"></script>
+</body>
+</html>

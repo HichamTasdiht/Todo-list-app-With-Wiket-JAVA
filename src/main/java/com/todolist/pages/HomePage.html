@@ -1,0 +1,61 @@
+<wicket:extend>
+    <div class="row mb-4 mt-4">
+        <div class="col-md-6">
+            <div class="card bg-dark text-white text-center">
+                <div class="card-body">
+                    <h5>Total Tasks</h5>
+                    <h2 wicket:id="totalTasks">0</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card bg-success text-white text-center">
+                <div class="card-body">
+                    <h5>Done</h5>
+                    <h2 wicket:id="doneTasks">0</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <form wicket:id="searchForm" class="row g-3">
+                <div class="col-md-5">
+                    <input type="text" wicket:id="searchInput" class="form-control" placeholder="Search description...">
+                </div>
+                <div class="col-md-4">
+                    <select wicket:id="statusFilter" class="form-select"></select>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary w-100">Apply Filter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <a wicket:id="addTask" class="btn btn-primary">+ Add Task</a>
+    </div>
+
+    <table class="table table-striped border shadow-sm">
+        <thead class="table-light text-center">
+            <tr>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr wicket:id="taskGroup">
+                <td wicket:id="desc"></td>
+                <td><span class="badge bg-secondary" wicket:id="status"></span></td>
+                <td class="d-flex justify-content-evenly">
+                    <a wicket:id="toggle" class="btn btn-sm btn-outline-success">Change Status</a>
+                    <a wicket:id="delete" class="btn btn-sm btn-danger" 
+                       onclick="return confirm('Delete this task?')">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</wicket:extend>
